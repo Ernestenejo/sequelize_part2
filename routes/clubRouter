@@ -1,0 +1,16 @@
+//import express and extract the router at once
+const router = require('express').Router();
+// import your functions from the controller
+const { createClub, getAll, getOneClub, updateClub, deleteClub } = require('../controller/clubsController');
+//create club route
+router.post('/club', createClub);
+// get all club
+router.get('/club', getAll);
+// get one club
+router.get('/club/:id', getOneClub);
+//  update club
+router.patch('/club/:id', updateClub);
+// delete club
+router.delete('/club/:id', deleteClub);
+
+module.exports = router;
