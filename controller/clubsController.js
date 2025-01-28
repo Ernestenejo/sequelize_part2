@@ -19,12 +19,19 @@ exports.createClub = async (req,res) => {
         }else {
             // create a new instance of the club data to the database
             const newClub = await clubModel.create({
-                id: uuid(),
-                name,
-                ucl,
-                coach,
-                stadium,
-                topsix
+              
+    id: uuid(),
+    name: "string",
+    ucl: "integer",
+    coach: "string",
+    stadium: "string",
+    topsix: "boolean"
+                // id: uuid(),
+                // name,
+                // ucl,
+                // coach,
+                // stadium,
+                // topsix
             })
             res.status(201).json({ message:'club created successfully',
                 data: newClub
