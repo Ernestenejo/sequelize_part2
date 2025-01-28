@@ -19,28 +19,17 @@ exports.createClub = async (req,res) => {
         }else {
             // create a new instance of the club data to the database
             const newClub = await clubModel.create({
-              
-    id: uuid(),
-    name: "string",
-    ucl: "integer",
-    coach: "string",
-    stadium: "string",
-    topsix: "boolean"
-                // id: uuid(),
-                // name,
-                // ucl,
-                // coach,
-                // stadium,
-                // topsix
+                id: uuid(),
+                name,
+                ucl,
+                coach,
+                stadium,
+                topsix
             })
             res.status(201).json({ message:'club created successfully',
                 data: newClub
             });
         }
-        // send a success response
-        // res.status(201).json({ message:'club created successfully',
-        //     data: newClub
-        // });
     } catch (error) {
         res.status(500).json({
             message: 'internal server error:' + error.message
